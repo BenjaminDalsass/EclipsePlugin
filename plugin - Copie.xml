@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+  <actionSet
+        description="Liste des menus du plugin"
+        id="org.deltadore.planet.menus"
+        label="Menus"
+        visible="true">
+     <menu
+           icon="icons/toolbox.png"
+           id="org.deltadore.planet.menuOutils"
+           label="Outils"
+           path="additions">
+        <groupMarker
+              name="content">
+        </groupMarker>
+     </menu>
+     <menu
+           icon="icons/environment.png"
+           id="org.deltadore.planet.menuProjet"
+           label="Projet Planet"
+           path="additions">
+        <groupMarker
+              name="distribution">
+        </groupMarker>
+        <separator
+              name="config">
+        </separator>
+        <separator
+              name="operations">
+        </separator>
+     </menu>
+     <menu
+           icon="icons/sample.gif"
+           id="org.deltadore.planet.menuPlugin"
+           label="Plugin"
+           path="additions">
+        <groupMarker
+              name="content">
+        </groupMarker>
+     </menu>
+     <menu
+           icon="icons/server_new.png"
+           id="org.deltadore.planet-new.menuServeur"
+           label="Serveur">
+        <groupMarker
+              name="content">
+        </groupMarker>
+        <separator
+              name="perso">
+        </separator>
+        <separator
+              name="serveur">
+        </separator>
+     </menu>
+  </actionSet>
+      <actionSet
+            description="Liste des actions sur le plugin"
+            id="org.deltadore.planet.actionPlugin"
+            label="Actions Plugin"
+            visible="true">
+         <action
+               class="org.deltadore.planet.plugin.actions.ouvertureDossiers.C_ActionOuvrirDossierExport"
+               icon="icons/dossier_export.png"
+               id="org.deltadore.planet.actionDossierExport"
+               label="Dossier export"
+               style="push"
+               toolbarPath="org.deltadore.planet.menuPlugin/content"
+               tooltip="Ouvrir le dossier d&apos;export">
+         </action>
+         <action
+               class="org.deltadore.planet.plugin.actions.ouvertureDossiers.C_ActionOuvrirDossierDevLocal"
+               icon="icons/folder_blue.png"
+               id="org.deltadore.planet.actionDossierDev"
+               label="Dossier développement local"
+               style="push"
+               toolbarPath="org.deltadore.planet.menuPlugin/content"
+               tooltip="Ouvrir le dossier développement local">
+         </action>
+      </actionSet>
+  <actionSet
+        id="org.deltadore.planet.actionServeur"
+        label="Actions Serveur"
+        visible="true">
+     <action
+           class="org.deltadore.planet.plugin.actions.ouvertureDossiers.C_ActionOuvrirDossierDocumentation"
+           icon="icons/books.png"
+           id="org.deltadore.planet.actionDocuments"
+           label="Documents"
+           style="push"
+           toolbarPath="org.deltadore.planet-new.menuServeur/serveur"
+           tooltip="Ouvrir le dossier documents">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.ouvertureDossiers.C_ActionOuvrirDossierSauvegarde"
+           icon="icons/disk_yellow.png"
+           id="org.deltadore.planet.actionDossierSauvegarde"
+           label="Boite de sauvegarde"
+           style="push"
+           toolbarPath="org.deltadore.planet-new.menuServeur/perso"
+           tooltip="Ouvrir ma boite de sauvegarde">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.ouvertureDossiers.C_ActionOuvrirDossierEchangeDoc"
+           icon="icons/package.png"
+           id="org.deltadore.planet.actionDossierEchangeDoc"
+           label="Boite d&apos;échange"
+           style="push"
+           toolbarPath="org.deltadore.planet-new.menuServeur/perso"
+           tooltip="Ouvrir ma boite d&apos;échange">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.ouvertureDossiers.C_ActionOuvrirJenkins"
+           icon="icons/jar_bean_new_pp.png"
+           id="org.deltadore.planet.actionJenkins"
+           label="Jenkins"
+           style="push"
+           toolbarPath="org.deltadore.planet-new.menuServeur/content"
+           tooltip="Ouvrir Jenkins">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.ouvertureDossiers.C_ActionOuvrirMantis"
+           icon="icons/debug.png"
+           id="org.deltadore.planet.actionMantis"
+           label="Mantis"
+           style="push"
+           toolbarPath="org.deltadore.planet-new.menuServeur/content"
+           tooltip="Ouvrir Mantis">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.ouvertureDossiers.C_ActionOuvrirArgos"
+           icon="icons/dictionary.png"
+           id="org.deltadore.planet.actionArgos"
+           label="Argos"
+           style="push"
+           toolbarPath="org.deltadore.planet-new.menuServeur/content"
+           tooltip="Ouvrir Argos">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.ouvertureDossiers.C_ActionOuvrirContenuVersions"
+           icon="icons/clipboard.png"
+           id="org.deltadore.planet.actionContenuVersions"
+           label="Contenu versions 2.x"
+           style="push"
+           toolbarPath="org.deltadore.planet-new.menuServeur/serveur"
+           tooltip="Ouvrir le fichier contenu versions 2.x">
+     </action>
+  </actionSet>
+  <actionSet
+        description="Liste des actions sur le projet Planet"
+        id="org.deltadore.planet.actionPlanet"
+        label="Actions Projet Planet"
+        visible="true">
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementClient"
+           icon="icons/logo_rond_dd_p.png"
+           id="org.deltadore.planet.actions.actionLancementClient"
+           label="Lancer le client"
+           menubarPath="org.deltadore.planet.menuProjet/distribution"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/distribution"
+           tooltip="Lancement du client">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementServeur"
+           icon="icons/logo_dd_p.png"
+           id="org.deltadore.planet.actions.actionLancementServeur"
+           label="Lancer le Serveur"
+           menubarPath="org.deltadore.planet.menuProjet/distribution"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/distribution"
+           tooltip="Lancement du Serveur">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementClientServeur"
+           icon="icons/logo_planet_pp.png"
+           id="org.deltadore.planet.actions.actionLancementClientServeur"
+           label="Lancer le serveur et le client"
+           menubarPath="org.deltadore.planet.menuProjet/distribution"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/distribution"
+           tooltip="Lancement du serveur et du client">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementGO"
+           icon="icons/logo_go_p.png"
+           id="org.deltadore.planet.actions.actionLancementGO"
+           label="Lancer GO"
+           menubarPath="org.deltadore.planet.menuProjet/distribution"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/distribution"
+           tooltip="Lancement de GO">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementKnx"
+           icon="icons/logo_konnex_pp.png"
+           id="org.deltadore.planet.actions.actionLancementKnx"
+           label="Lancer Serveur KNX"
+           menubarPath="org.deltadore.planet.menuProjet/config"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/config"
+           tooltip="Lancement du serveur KNX">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementCyclone"
+           icon="icons/logo_cyclone_pp.png"
+           id="org.deltadore.planet.actions.actionLancementCyclone"
+           label="Lancer Cyclone"
+           menubarPath="org.deltadore.planet.menuProjet/config"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/config"
+           tooltip="Lancement du configurateur LON Cyclone">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementTraducteur"
+           icon="icons/logo_traducteur_pp.png"
+           id="org.deltadore.planet.actions.actionLancementTraducteur"
+           label="Lancer le Traducteur"
+           menubarPath="org.deltadore.planet.menuProjet/config"
+           state="false"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/config"
+           tooltip="Lancement du Traducteur">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementInfoFonc"
+           icon="icons/logo_infofonc_pp.png"
+           id="org.deltadore.planet.actions.actionLancementInfoFonc"
+           label="Lancer Info Fonc"
+           menubarPath="org.deltadore.planet.menuProjet/config"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/config"
+           tooltip="Lancement Info Fonc">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementStudio"
+           icon="icons/logo_studio_p.png"
+           id="org.deltadore.planet.actions.actionLancementStudio"
+           label="Lancer Studio"
+           menubarPath="org.deltadore.planet.menuProjet/config"
+           state="false"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/config"
+           tooltip="Lancement de Studio">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementCM"
+           icon="icons/logo_cm_p.png"
+           id="org.deltadore.planet.actions.actionLancementCM"
+           label="Lancer CM"
+           menubarPath="org.deltadore.planet.menuProjet/config"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/config"
+           tooltip="Lancement de CM Windev">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.projet.C_ActionSuppressionProjetPlanet"
+           icon="icons/delete.png"
+           id="org.deltadore.planet.actionSuppression"
+           label="Suppression du projet local"
+           menubarPath="org.deltadore.planet.menuProjet/operations"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/operations">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.ouvertureDossiers.C_ActionOuvrirDossierDistribution"
+           icon="icons/dossier_pp.png"
+           id="org.deltadore.planet.actions.actionOuvrirDossier"
+           label="Ouvrir dossier de distribution"
+           menubarPath="org.deltadore.planet.menuProjet/operations"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/operations">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.projet.C_ActionExportationDistribution"
+           icon="icons/applications.png"
+           id="org.deltadore.planet.actions.actionExport"
+           label="Exporter la distribution vers..."
+           menubarPath="org.deltadore.planet.menuProjet/operations"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuProjet/operations">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.compilation.C_ActionMultipleCompilation"
+           icon="icons/gear.png"
+           id="org.deltadore.planet.actionCompilation"
+           label="Compilation"
+           menubarPath="org.deltadore.planet.menuProjet/operations"
+           style="pulldown"
+           toolbarPath="org.deltadore.planet.menuProjet/operations"
+           tooltip="Préparation de la distribution">
+     </action>
+  </actionSet>
+  <actionSet
+        description="Liste des actions de type outils"
+        id="org.deltadore.planet.actionOutils"
+        label="Actions Outils"
+        visible="true">
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementDictionnaireInverse"
+           icon="icons/book_open.png"
+           id="org.deltadore.planet.actionDictionnaireInverse"
+           label="Dictionnaire inversé"
+           menubarPath="org.deltadore.planet.menuOutils/content"
+           toolbarPath="org.deltadore.planet.menuOutils/content"
+           tooltip="Trouver une clé avec sa traduction">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementRevectorisateur"
+           icon="icons/revec.png"
+           id="org.deltadore.planet.actionRevectorisateur"
+           label="Revectorisateur"
+           menubarPath="org.deltadore.planet.menuOutils/content"
+           toolbarPath="org.deltadore.planet.menuOutils/content"
+           tooltip="Lancement du revectorisateur">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementMoulinetteUniverselle"
+           icon="icons/historique_pp.png"
+           id="org.deltadore.planet.actionMoulinette"
+           label="Moulinette Archivages"
+           menubarPath="org.deltadore.planet.menuOutils/content"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuOutils/content"
+           tooltip="Mouliner les archivages">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.projet.C_ActionSuppressionHistoriques"
+           icon="icons/scroll_delete.png"
+           id="org.deltadore.planet.actionHisto"
+           label="Suppression des historiques"
+           menubarPath="org.deltadore.planet.menuOutils/content"
+           toolbarPath="org.deltadore.planet.menuOutils/content"
+           tooltip="Suppression des historiques serveur">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.ouvertureDossiers.C_ActionOuvrirAideWindowsAPI"
+           icon="icons/help2.png"
+           id="org.deltadore.planet.actionAideWindows"
+           label="Aide Windows API"
+           menubarPath="org.deltadore.planet.menuOutils/content"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuOutils/content"
+           tooltip="Aide Windows API">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.ouvertureDossiers.C_ActionOuvrirAideOWL"
+           icon="icons/help2.png"
+           id="org.deltadore.planet.actionAideOWL"
+           label="Aide OWL API"
+           menubarPath="org.deltadore.planet.menuOutils/content"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuOutils/content"
+           tooltip="Aide OWL API">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionSVNSearch"
+           icon="/icons/note_find.png"
+           id="org.deltadore.planet.actionSearchSVN"
+           label="Recherche SVN"
+           menubarPath="org.deltadore.planet.menuOutils/content"
+           style="push"
+           toolbarPath="org.deltadore.planet.menuOutils/content"
+           tooltip="Rechercher révision SVN">
+     </action>
+     <action
+           class="org.deltadore.planet.plugin.actions.lancement.C_ActionLancementEstampillageVersionConfig"
+           icon="icons/barcode_pp.png"
+           id="org.deltadore.planet.actionEstampillage"
+           label="Estampillage"
+           menubarPath="org.deltadore.planet.menuOutils/content"
+           toolbarPath="org.deltadore.planet.menuOutils/content"
+           tooltip="Estampiller la version d&apos;une configuration">
+     </action>
+  </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="org.deltadore.planet"
+            name="Manager Planet">
+      </category>
+      <view
+            category="org.deltadore.planet"
+            class="org.deltadore.planet.ui.vues.sites.C_VueSitesServeur"
+            icon="icons/site_pp.png"
+            id="VUE.SITES_SERVEUR"
+            name="Srv. Sites"
+            restorable="true">
+      </view>
+      <view
+            category="org.deltadore.planet"
+            class="org.deltadore.planet.ui.vues.fonctionExplorer.C_VueFonctionExplorer"
+            icon="icons/module.png"
+            id="VUE.FONCTIONS_EXPLORER"
+            name="Explorateur Fonctions"
+            restorable="true">
+      </view>
+      <view
+            category="org.deltadore.planet"
+            class="org.deltadore.planet.ui.vues.changeLog.C_VueChangeLog"
+            icon="icons/clipboard.png"
+            id="VUE.CHANGE_LOG"
+            name="Change log">
+      </view>
+      <view
+            category="org.deltadore.planet"
+            class="org.deltadore.planet.ui.vues.projet.C_VueProjet"
+            icon="icons/environment.png"
+            id="VUE.PROJET"
+            name="Projet Planet"
+            restorable="true">
+      </view>
+      <view
+            category="org.deltadore.planet"
+            class="org.deltadore.planet.ui.vues.images.C_VueImages"
+            icon="icons/paysage.png"
+            id="VUE.IMAGES"
+            name="Images"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="org.deltadore.planet.plugin.preferences.C_PlanetPreferencePage"
+            id="org.deltadore.planet.preferences"
+            name="Manager Planet">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.deltadore.planet.plugin.preferences.C_PlanetPreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.deltadore.planet.plugin.perspective.C_PerspectivePlanet"
+            fixed="false"
+            icon="icons/planet_pp.png"
+            id="org.deltadore.planet.perspectivePlanet"
+            name="Manager Planet">
+         <description>
+            Perspective pour ManagerPlanet
+         </description>
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ant.core.extraClasspathEntries">
+      <extraClasspathEntry
+            library="Lib/log.jar">
+      </extraClasspathEntry>
+   </extension>
+   
+	<extension point="org.eclipse.ui.viewActions"> 
+	   	
+	   	<viewContribution
+		   id="org.eclipse.ui.articles.action.contribution.view"
+		   targetID="org.eclipse.jdt.ui.PackageExplorer"> 
+		 	        
+			<action
+		        id="HISTORY" 
+		        label="Historique SVN" 
+		        icon="icons/note_find.png"
+		        tooltip="Afficher l'historique SVN"
+		    	toolbarPath="group1"
+		        class="org.deltadore.planet.plugin.actions.svn.C_ActionHistory"
+		        enablesFor="*">
+			</action> 
+				      
+		    <action
+		        id="COMPARE" 
+		        label="Comparer SVN" 
+		        icon="icons/documents_new.png"
+		        tooltip="Comparer SVN"
+		    	toolbarPath="group1"
+		    	style="pulldown"
+		        class="org.deltadore.planet.plugin.actions.svn.C_ActionMultipleCompare"
+		        enablesFor="*">
+      		</action> 
+   		</viewContribution> 
+   		
+   		<viewContribution
+			id="org.eclipse.ui.articles.action.contribution.view"
+		   	targetID="org.eclipse.ui.console.ConsoleView"> 
+		 	
+		 	<action
+		        id="FEEDBACK_COMPILATION_CM" 
+		        label="Compilation WinCM" 
+		        icon="icons/compil_cm_ok.png"
+		        tooltip="Console compilation CM"
+		      	toolbarPath="group1"
+		        class="org.deltadore.planet.plugin.actions.compilation.C_ActionConsoleFeedback"
+		        enablesFor="*">
+		        
+		 	</action> 
+		      
+		    <action
+		      	id="FEEDBACK_COMPILATION_SERVEUR" 
+		        label="Compilation WinmanServeur" 
+		        icon="icons/compil_serveur_ok.png"
+		        tooltip="Console compilation Serveur"
+		      	toolbarPath="group1"
+		        class="org.deltadore.planet.plugin.actions.compilation.C_ActionConsoleFeedback"
+		        enablesFor="*">
+		  	</action> 
+		      
+		    <action
+		      	id="FEEDBACK_COMPILATION_CYCLONE" 
+		        label="Compilation Cyclone" 
+		        icon="icons/compil_cyclone_ok.png"
+		        tooltip="Console compilation Cyclone"
+		      	toolbarPath="group1"
+		        class="org.deltadore.planet.plugin.actions.compilation.C_ActionConsoleFeedback"
+		        enablesFor="*">
+		  	</action> 		      
+		      
+		    <action
+		      	id="FEEDBACK_COMPILATION_SERVEUR_KNX" 
+		        label="Compilation Serveur KNX" 
+		        icon="icons/compil_knx_ok.png"
+		        tooltip="Console compilation Serveur Konnex"
+		      	toolbarPath="group1"
+		        class="org.deltadore.planet.plugin.actions.compilation.C_ActionConsoleFeedback"
+		        enablesFor="*">
+		  	</action> 		
+		  	
+		  	<action
+		      	id="FEEDBACK_COMPILATION_INFO_FONC" 
+		        label="Compilation Info Fonc" 
+		        icon="icons/compil_infoFonc_ok.png"
+		        tooltip="Console compilation info fonc"
+		      	toolbarPath="group1"
+		        class="org.deltadore.planet.plugin.actions.compilation.C_ActionConsoleFeedback"
+		        enablesFor="*">
+		  	</action> 	
+		  	
+		  	<action
+		      	id="FEEDBACK_CREATION_JAR" 
+		        label="creation_JClient" 
+		        icon="icons/compil_jar_ok.png"
+		        tooltip="Console création JAR"
+		      	toolbarPath="group1"
+		        class="org.deltadore.planet.plugin.actions.compilation.C_ActionConsoleFeedback"
+		        enablesFor="*">
+		  	</action> 	
+		      
+   		</viewContribution> 
+   		
+	</extension>
+ <extension
+       point="org.eclipse.ui.startup">
+        <startup class="org.deltadore.planet.plugin.C_Startup"/>
+ </extension>
+ <extension
+       point="org.eclipse.ui.editors">
+ </extension>
+</plugin>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+			attributeFormDefault="unqualified" version="1.0">
+
+	<xs:element name="RELEASE">
+		<xs:complexType>
+		 	<xs:sequence>
+		 	
+				<xs:element name="REPOSITORY_SVN" type="xs:string" minOccurs="1" maxOccurs ="1"/>
+				
+				<xs:element name="REVISION_SVN" type="xs:integer" minOccurs="1" maxOccurs ="1"/>
+				<xs:element name="RELEASE_MAJEUR" type="xs:integer" minOccurs="1" maxOccurs ="1"/>
+				<xs:element name="RELEASE_MINEUR" type="xs:integer" minOccurs="1" maxOccurs ="1"/>
+				<xs:element name="RELEASE_DATE" type="xs:string" minOccurs="1" maxOccurs ="1"/>
+				 
+				<xs:element name="SITES">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="NUM_AFFAIRE" type="xs:integer" minOccurs="0" />
+						</xs:sequence>		
+					</xs:complexType>
+				</xs:element>
+		 	</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

@@ -1,0 +1,8 @@
+<contexts>
+	
+	<context id="HELP.TELECHARGEMENT_RELEASE" title="Téléchargement release">
+		<description>Téléchargement d&apos;une release de ManagerPlanet.
+La distribution et ses sources sont stockées dans le répertoire de développement local.
+Un projet est créé au sein de votre Workspace habituel.</description>
+	</context>
+</contexts>
